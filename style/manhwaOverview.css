@@ -1,0 +1,341 @@
+:root {
+    --primary: #16151d;
+    --bg-color: #343434;
+    --text-color: white;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+body{
+    background-color: rgb(30, 25, 34);
+}
+.head-top{
+    background-color: black;
+    color: white;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 150px;
+}
+.head-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: blue;
+    padding: 0 160px;
+}
+.head-bottom ul{
+    list-style: none;
+    overflow: hidden;
+    margin: 0;
+}
+.head-bottom li{
+    float: left;
+}
+.head-bottom a{
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+}
+.head-bottom li a:hover{
+    background-color: rgb(0, 0, 112);
+}
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dark-light{
+    padding-left: 30px;
+}
+.search-bar{
+    width: 400px;
+    background-color: rgb(56, 56, 56);
+    display: flex;
+    border-radius: 5px;
+    padding: 5px;
+}
+.search-bar input{
+    background: transparent;
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+}
+::placeholder{
+    color: rgb(136, 128, 128);
+}
+.search-bar button img{
+    width: 20px;
+}
+.search-bar button {
+    border: 0;
+    cursor: pointer;
+    background-color: rgb(56, 56, 56);
+}
+
+.mainbody{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+.overview-body{
+    width: 740px;
+}
+.popular-today{
+    width: 300px;
+    color: white;
+    background-color: rgb(29, 17, 17);
+    padding: 10px;
+    border-radius: 5px;
+    height: 400px;
+}
+.top{
+    background-color: rgb(29, 17, 17);
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    font-size: 13px;
+}
+.footer{
+    color: white;
+    background-color: rgb(29, 17, 17);
+    padding: 10px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.overview-content {
+    background-color: rgb(29, 17, 17);
+    margin-top: 10px;
+    height: 900px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid rgb(107, 107, 241);
+}
+.cover{
+    overflow: hidden;
+    height: 200px;
+}
+.cover img{
+    width: 100%;
+    height: auto;
+    color: violet;
+    background-color: blue;
+    opacity: 0.5;
+}
+.content{
+    position: relative;
+    padding: 15px;
+    display: flex;
+    width: 100%;
+}
+.img_rating-content{
+    position: absolute;
+    top: -20px;
+    width: 25%;
+}
+.imgCover img{
+    width: 100%;
+}
+.title_overview-content{
+    padding-left: 205px;
+    color: white;
+    width: 700px;
+}
+.title{
+    font-size: 25px;
+    font-weight: bold;
+}
+.alternative-title p{
+    margin-top: 10px;
+}
+.rating-box{
+    margin-top: 10px;
+}
+.bookmark-btn{
+    background-color: blue;
+    border: none;
+    padding: 7px 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+}
+.bookmark-btn:hover{
+    background-color: #343434;
+    transition: ease-in .2s;
+}
+.followedby{
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 8px;
+}
+.rating{
+    background-color: #343434;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    color: white;
+
+}
+.status,
+.type{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #343434;
+    padding: 10px 10px;
+    margin-top: 8px;
+    color: white;
+    border-radius: 5px;
+    font-size: 13px;
+}
+.info{
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 200px 200px;
+    gap: 20px;
+}
+.upperP{
+    font-weight: bold;
+}
+.info p{
+    margin-top: 5px;
+}
+.gener{
+    margin-top: 20px;
+}
+.list ul li{
+    list-style: none;
+    margin-top: 5px;
+    display: flex;
+}
+.list a{
+    background-color: #343434;
+    margin-right: 10px;
+    font-size: 15px;
+    padding: 5px 10px;
+    border-radius: 2px;
+}
+.reviews{
+    background-color: rgb(29, 17, 17);
+    margin-top: 20px;
+    height: 500px;
+    color: white;
+}
+.review-top{
+    padding: 10px;
+    border-bottom: 1px solid rgb(107, 107, 241);
+    font-weight: bold;
+}
+.app{
+    padding: 10px;
+    width: 100%;
+
+    display: grid;
+    place-items: center;
+    color: var(--text-color);
+}
+.ratings{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+.rating-average {
+    width: 30%;
+    background-color: var(--bg-color);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+.rating-average h1{
+    font-size: 30px;
+}
+.rating-average p {
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+.rating_progress {
+    width: 70%;
+}
+.progress-value{
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    column-gap: 5px;
+}
+.progress-value .star{
+    font-size: 20px;
+    color: gold;
+}
+.progress-value p:last-child {
+    width: 10%;
+}
+.rating_progress .progress {
+    flex: 1 1 0;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #16151d;
+}
+.bar {
+    height: 100%;
+    background-color: gold;
+    border-radius: 5px;
+}
+.rating-average .star-outer {
+    position: relative;
+    font-size: 20px;
+
+    display: inline-block;
+}
+.rating-average .star-outer::before {
+    content: "\2605 \2605 \2605 \2605 \2605";
+    color: grey;
+}
+.rating-average .stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0%;
+    overflow: hidden;
+}
+.rating-average .stars::before {
+    content: "\2605 \2605 \2605 \2605 \2605";
+    color: gold;
+}
+
+
+
+
+
+
+
