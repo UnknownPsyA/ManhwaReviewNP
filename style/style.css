@@ -1,142 +1,649 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: sans-serif;
 }
+:root{
+    --nav-bg-color: black;
+    --body-bg-color: #16151d;
+    --text-color: white;
+    --logo-color: white;
+    --search-bar-bg: #17151b;
+    --search-border: #23202a;
+    --nav-bg-blue: #913fe2;
+    --li-blue-color: white;
+    --box-bg-color: #222;
+    --border-bottom-color: #312f40;
+    --border-color: rgb(90, 90, 90);
+    --pop-time-bg: #333;
+}
+.lightmode{
+    --nav-bg-color: white;
+    --body-bg-color: #eef0f2;
+    --text-color: black;
+    --logo-color: black;
+    --search-bar-bg: white;
+    --search-border: #ccc;
+    --li-blue-color: white;
+    --box-bg-color: white;
+    --border-bottom-color: #cdc9e9;
+    --border-color: rgb(68, 0, 255);
+    --pop-time-bg: #e4e2e2;
+}
+
 a{
     text-decoration: none;
-    color: white;
 }
 body{
-    background-color: rgb(12, 11, 11);
+    background-color: var(--body-bg-color);
 }
-.head-top{
-    background-color: black;
-    color: white;
+
+/* navigation bar */
+
+.nav-top{
+    background-color: var(--nav-bg-color);
     height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 150px;
-}
-.head-bottom{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: blue;
-    padding: 0 160px;
-}
-.head-bottom ul{
-    list-style: none;
     overflow: hidden;
-    margin: 0;
 }
-.head-bottom li{
-    float: left;
-}
-.head-bottom a{
-    display: block;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    margin: 0 15px;
-}
-.head-bottom li a:hover{
-    background-color: rgb(0, 0, 112);
-}
-.right{
+.centernav{
+    max-width: 1220px;
+    margin: 0 auto;
+
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
 }
-.dark-light{
-    padding-left: 30px;
+.logo{
+    font-size: 35px;
+    width: 300px;
+    color: var(--logo-color);
+}
+.logo a{
+    color: var(--text-color);
+}
+.search-holder{
+    width: 400px;
+    height: 35px;
 }
 .search-bar{
-    width: 400px;
-    background-color: rgb(56, 56, 56);
-    display: flex;
-    border-radius: 5px;
-    padding: 5px;
-}
-.search-bar input{
-    background: transparent;
-    flex: 1;
+    width: 100%;
+    background-color: var(--search-bar-bg);
+
     border: none;
-    outline: none;
+    height: 25px;
+    padding: 5px;
+
     font-size: 15px;
-    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    color: var(--text-color);
+    border: 1px solid var(--search-border);
 }
 ::placeholder{
-    color: rgb(136, 128, 128);
+    color: var(--text-color);
 }
-.search-bar button img{
-    width: 20px;
-}
-.search-bar button {
-    border: 0;
+.dark-light label{
+    width: 70px;
+    height: 35px;
+    background-color: #ebebeb;
+    position: relative;
+    display: block;
+    border-radius: 40px;
+    box-shadow: inset 0px 5px 15px rgb(0, 0, 0, 0.4), inset 0px -5px 15px rgb(255, 255, 255, 0.4);
     cursor: pointer;
-    background-color: rgb(56, 56, 56);
+    transition: 0.3px;
+}
+.dark-light label:after{
+    content: "";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    background-color: blue;
+    border-radius: 23px;
+    box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.4);
+    transition: 0.3s;
+}
+.dark-light input{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    position: absolute;
+}
+.dark-light input:checked + label:after {
+    left: 67px;
+    transform: translateX(-100%);
+}
+.dark-light label:active:after{
+    width: 50px;
+}
+.nav-bottom{
+    background-color: var(--nav-bg-blue);
+}
+.nav-bottom ul {
+    display: flex;
+    margin-left: 10px;
+}
+.nav-bottom li{
+    list-style: none;
+    margin-right: 10px;
+    padding: 15px;
+}
+.nav-bottom li a{
+    color: var(--li-blue-color);
+    font-size: 17px;
+}
+.nav-bottom li:hover{
+    background-color: #5e2992;
+}
+.supriseMe{
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #5e2992;
+    color: white;
+    cursor: pointer;
+    padding: 6px;
+    gap: 3px;
+}
+.supriseMe:hover {
+    background-color: white;
+    color: black;
+}
+.supriseMe p{
+    font-size: 16px;
 }
 
+/*Mobile view top nav*/
 
+@media (max-width: 425px) {
+    .centernav{
+        max-width: 400px;
+        margin: 0 auto;
+        height: 50px;
+    }
+    .logo{
+        font-size: 30px;
+        height: 40px;
+        width: 50px;
+    }
+    .search-holder{
+        height: 25px;
+        width: 190px;
+    }
+    .dark-light label{
+        width: 50px;
+        height: 25px;
+        top: 8px;
+    }
+    .dark-light label:after{
+        height: 22px;
+        width: 22px;
+    }
+    .dark-light input:checked + label:after {
+        left: 47px;
+        transform: translateX(-100%);
+    }
+    .nav-top{
+        background-color: var(--nav-bg-blue);
+    }
+    .nav-bottom{
+        display: none;
+    }
+}
 
-
-
-
-
-
-
-
+/* mainbody start */
 
 .mainbody{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #16151d;
-    margin-top: 20px;
-    height: 1550px;
-    width: 1220px;
-    display: block;
-}
-.font{
-    border-bottom: 1px solid rgb(100, 100, 255);
-    padding: 10px 5px;
-}
-.font p{
-    font-size: 20px;
-    color: rgb(255, 255, 255);
-}
-.list-manhwas{
-    width: 1200px;
-    height: 600px;
+    margin: 0 auto;
+    max-width: 1220px;
+    overflow: hidden;
+    margin-top: 50px;
+    position: relative;
+
     display: flex;
-    flex-wrap: wrap;
+}
+@media (max-width: 425px) {
+    .mainbody{
+        width: 100%;
+        display: block;
+    }
+} 
+/* main content here */
+.content-body{
+    width: 70%;
+}
+@media (max-width: 425px) {
+    .content-body{
+        width: 100%;
+    }
+}
+
+/* side content here */
+.side-content{
+    margin-left: 15px;
+    background-color: var(--box-bg-color);
+    width: 30%;
+    height: fit-content;
+}
+.pop-side{
+    color: var(--text-color);
+    padding: 10px;
+    border-bottom: 1px solid var(--border-bottom-color);
+}
+.pop-time{
+    padding: 10px;
+    
+}
+.pop-list ul{
+    background-color: var(--pop-time-bg);
+    display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 10px;
-    row-gap: 10px;
-
+    padding: 5px;
+    border-radius: 2px;
 }
-.manhwa{
-    height: 360px;
-    border-bottom: 1px solid rgb(83, 83, 255);
-    width: 300px;
+.pop-list ul li{
+    list-style: none;
 }
-.title-img{
+.pop-list ul li button {
+    border: none;
+    background-color: var(--nav-bg-blue);
+    width: 100px;
+    padding: 3px;
+    border-radius: 2px;
+    cursor: pointer;
+    color: var(--li-blue-color);
+}
+.pop-list ul li button:hover{
+    background-color: white;
+    color: black;
+}
+.manhwa-pop-list ul li{
+    list-style: none;
+    border-bottom: 1px solid var(--border-bottom-color); 
+    height: 100px;
+    padding-top: 10px;
+    overflow: hidden;
+}
+.pop-manhwa-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    font-weight: bold;
-    font-size: 20px;
+    gap: 10px;
 }
-.image img{
-    width: 220px;
+.number{
+    border: 1.5px solid var(--border-color);
+    height: 30px;
+    width: 35px;
+    border-radius: 5px;
+    margin-left: 10px;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+.pop-manhwa-image img{
+    width: 70px;
+    height: 95px;
+}
+.pop-title-rating{
+    height: 100px;
+    width: 200px;
+}
+.pop-title-rating a{
+    color: var(--text-color);
+}
+.pop-title-rating a:hover{
+    color: #a248fc;
+}
+.pop-gener{
+    font-size: 12px;
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+    height: 30px;
+    overflow: hidden;
+    color: var(--text-color);
+}
+.gener-link{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.gener-link a{
+    color: var(--text-color);
+}
+.pop-rating{
+    margin-top: 10px;
+    font-size: 11px;
+    color: var(--text-color);
+}
+
+@media (max-width: 425px) {
+    .side-content{
+        margin: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .pop-list ul{
+        width: 380px;
+    }
+    .pop-list ul li button {
+        width: 110px;
+    }
+    .pop-title-rating{
+        width: 280px;
+    }
+}
+.wrapper{
+    width: 100%;
     height: 300px;
+    display: flex;
+}
+
+
+/* here lies crausal */
+.container{
+    width: 75%;
+    height: 100%;
+}
+.crausal{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+}
+.slider{
+    display: flex;
+    height: 100%;
+    width: 500%;
+    flex-shrink: 0;
+    transition: all 0.5s;
+}
+.slider section{
+    flex-basis: 20%;
+    width: 20%;
+    flex-shrink: 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00DBDE;
+    background-image: linear-gradient(90deg, #202424 0%, #140149 100%);
+    border-radius: 5px;
+}
+.arrow {
+    position: absolute;
+    top: 10px;
+    cursor: pointer;
+}
+.arrow.prev{
+    left: 10px;
+    color: white;
+}
+.arrow.next{
+    right: 10px;
+    color: white;
+}
+.content-image{
+    display: flex;
+    padding: 20px;
+    z-index: 1;
 }
 .title{
-    font-size: 20px;
-    width: 220px;
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; 
+}
+.title-ratingstar{
+    display: flex;
+    gap: 10px;
+    color: white;
+}
+.rating{
+    font-size: 40px;
+}
+.gener ul{
+    display: flex;
+}
+.gener ul li{
+    list-style: none;
+    margin-left: 5px;
+}
+.gener ul li a{
+    color: white;
+}
+.summary p{
+    margin: 5px;
+    color: rgb(168, 167, 167);
+}
+.status{
+    margin-left: 5px;
+    color: rgb(168, 167, 167);
+}
+.image img{
+    width: 150px;
+    height: 200px;
+}
+@media (max-width: 425px) {
+    .container{
+        width: 100%;
+    }
+    .section-slider{
+        padding: 5px;
+        width: 400px;
+    }
+    .content-image{
+        padding: 15px;
+        gap: 5px;
+    }
+    .rating{
+        font-size: 20px;
+    }
+    .title{
+        font-size: 15px;
+    }
+    .image img{
+        width: 100px;
+        height: 150px;
+    }
+    .title-type{
+        width: 270px;
+        height: 50px;
+        overflow: hidden;
+    }
+    .crausal-summary{
+        height: 60px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: wrap;
+    }
+    .gener{
+        width: 280px;
+        margin-top: 15px;
+        color: white;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .title-ratingstar{
+        height: 30px;
+    }
+}
+
+
+
+/* weekly trending */
+.weekly-trend{
+    width: 25%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    margin-left: 20px;
+}
+
+@media (max-width: 425px) {
+    .weekly-trend{
+        display: none;
+    }
+}
+
+/* Popular Today body */
+.popular-today{
+    width: 100%;
+    background-color: var(--box-bg-color);
+    margin-top: 40px;
+    color: var(--text-color);
+    font-weight: bold;
+    border-radius: 5px;
+}
+.popular-h1{
+    border-bottom: 1px solid var(--border-bottom-color);
+    padding: 10px;
+}
+.popContainer{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+.popbox{
+    width: 160px;
+    height: 290px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.popimage a{
+    color: var(--text-color);
+}
+.popimage a:hover{
+    color: blue;
+
+}
+.popimage img{
+    width: 160px;
+    height: 230px;
+    border-radius: 5px;
+}
+.chaps-rating{
+    font-size: 12px;
+}
+.chaps-rating p{
+    margin-top: 2px;
+}
+@media (max-width: 425px) {
+    .popContainer{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+    .popContainer .last{
+        display: none;
+    }
+    .popbox{
+        width: 190px;
+        height: 320px;
+        margin-top: 10px;
+    }
+    .popimage{
+        width: 190px;
+    }
+    .popimage img{
+        width: 190px;
+        height: 250px;
+    }
+}
+
+/* main post body */
+.manhwa-body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--box-bg-color);
+    margin-top: 50px;
+}
+.latestUpdate{
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-bottom-color);
+}
+.manhwa-container{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 417px 417px;
+    row-gap: 10px;
+}
+.manhwabox{
+    height: 200px;
+    border-bottom: 1px solid var(--border-bottom-color);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.manhwa{
+    padding: 7px;
+    display: flex;
+    gap: 10px;
+}
+.manhwa-image img{
+    width: 130px;
+    height: 180px;
+    border-radius: 3px;
+}
+.title a{
+    color: var(--text-color);
+}
+.followers-rating{
+    margin-top: 30px;
+}
+.followers-rating p{
+    color: var(--text-color);
+    margin-top: 10px;
+    font-size: 14px;
+}
+@media (max-width: 425px) {
+    .manhwa-container{
+        display: block;
+    }
+}
+
+/* footer here */
+.footer {
+    width: 100%;
+    margin-top: 20px;
+    height: fit-content;
+}
+.footerlist{
+    background-color: var(--nav-bg-blue);
+}
+.footerlist ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.footerlist ul li{
+    list-style: none;
+    padding: 6px;
+}
+.footerlist ul li:hover{
+    background-color: #5e2992;
+}
+.footerlist ul li a{
+    color: var(--li-blue-color);
+}
+.footerlogo{
+    background-color: var(--body-bg-color);
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+}
+.footerlogo a{
+    color: var(--text-color);
+    background-color: black;
 }
